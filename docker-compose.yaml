@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  open-_telemetry_first:
+    image: "open-telemetry-first:latest"
+    container_name: "open-telemetry-first"
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/go/src/app
+    ports:
+      - 8083:8083
+
